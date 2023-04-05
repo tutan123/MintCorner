@@ -6,7 +6,7 @@ Thanks to WTF Academy. I learned a lot from there.
 
 * **Project name:** MintCorner
 * **Project description:** MintCorner is the NFT mint website for web3.
-* **Website:**
+* **Website:** http://108.61.181.8/
 * **GitHub:** https://github.com/tutan123/MintCorner
 * **Twitter:** @mintcorners
 * **Contact email / Telegram / Twitter:** 
