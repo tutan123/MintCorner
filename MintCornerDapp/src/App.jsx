@@ -13,7 +13,9 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 window.chainLogo = {};
 chainLogo = ethLogo;
 
-const NFT_ADDRESS = '0x071dd985caa45b1583a337a4497974bc8d50e786d5f3d3e53971cdb333858ebd';
+const TESTNET_NFT_ADDRESS = '0x071dd985caa45b1583a337a4497974bc8d50e786d5f3d3e53971cdb333858ebd';
+const MAINNET_NFT_ADDRESS = '0x0660c773606281a57d75bc9735a54d80a1f3e7756d9df65e5503baf4a33afa4b';
+let NFT_ADDRESS = '0x0660c773606281a57d75bc9735a54d80a1f3e7756d9df65e5503baf4a33afa4b';
 
 const App = () => {
   const [value, setValue] = useState();
@@ -44,16 +46,24 @@ const App = () => {
     </div>
 	);
 
+  if (chain.name == 'StarkNet Görli') {
+    NFT_ADDRESS = TESTNET_NFT_ADDRESS;
+  }
+  else if(chain.name == 'StarkNet Mainnet'){
+    NFT_ADDRESS = MAINNET_NFT_ADDRESS;
+  }
+
+
 	// Form to enter domain name and data
 	const renderInputForm = () => {
-		if (chain.name !== 'StarkNet Görli') {
-      console.log('chain:', chain)
-			return (
-				<div className="connect-wallet-container">
-        <p>Please Switch to Starknet Goerli Testnet</p>
-      </div>
-			);
-		}
+		// if (chain.name !== 'StarkNet Görli') {
+    //   console.log('chain:', chain)
+		// 	return (
+		// 		<div className="connect-wallet-container">
+    //     <p>Please Switch to Starknet Goerli Testnet</p>
+    //   </div>
+		// 	);
+		// }
 		return (
 			<div className="form-container">
             <button className='cta-button mint-button' onClick={claimNFT}>
